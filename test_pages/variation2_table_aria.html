@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Variation 2: Table-Based Layout with ARIA</title>
+  <style>
+    body { font-family: Segoe UI, sans-serif; padding: 25px; background: #eef2f6; }
+    table { width: 100%; max-width: 650px; background: #fff; border-collapse: collapse; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    th, td { padding: 14px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+    th { width: 35%; background: #f8fafc; font-weight: 600; color: #334155; }
+    input[type="text"], select { width: 90%; padding: 7px; border: 1px solid #cbd5e1; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h2>Enterprise Profile Editor (Table Structure)</h2>
+  <p>Notice: No standard form-groups or bootstrap classes. Structured inside HTML table tags with ARIA labels.</p>
+  
+  <table>
+    <tr>
+      <th>First Name</th>
+      <td>
+        <!-- Input without explicit id/label-for linkage, identified by row header and aria-label -->
+        <input type="text" name="tbl_given_name" aria-label="First Name" placeholder="Given name" />
+      </td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td>
+        <input type="text" name="tbl_family_name" aria-label="Last Name" placeholder="Family name" />
+      </td>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <td>
+        <label><input type="radio" name="opt_sex" value="Male"> Male</label>&nbsp;&nbsp;
+        <label><input type="radio" name="opt_sex" value="Female"> Female</label>&nbsp;&nbsp;
+        <label><input type="radio" name="opt_sex" value="Transgender"> Transgender</label>
+      </td>
+    </tr>
+    <tr>
+      <th>Select State</th>
+      <td>
+        <select name="tbl_region_code" aria-label="Select State">
+          <option value="none">-- Choose Region --</option>
+          <option value="United States">United States</option>
+          <option value="Germany">Germany</option>
+          <option value="Japan">Japan</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
